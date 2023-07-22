@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Pawan Kumar",
+    "email": "pawan@gmail.com",
+    "age": 22,
+    "address": "Kullu"
+  },
+  {
+    "id": 2,
+    "name": "Sunil Kumar",
+    "email": "sunil@gmail.com",
+    "age": 20,
+    "address": "Anni"
+  },
+  {
+    "id": 3,
+    "name": "Ketan Kumar Pant",
+    "email": "ketan@gmail.com",
+    "age": 21,
+    "address": "Hamirpur"
+  }
+]

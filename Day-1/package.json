@@ -1,0 +1,11 @@
+{
+  "name": "day-1",
+  "version": "1.0.0",
+  "description": "Creating the Backend API",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pawan Kumar",
+  "license": "ISC"
+}
