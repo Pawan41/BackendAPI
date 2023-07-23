@@ -30,7 +30,6 @@ const userRouter = require('./routes/userRoutes');
 
 app.use(cors());
 
-
 app.use('/api',userRouter);
 
 app.get('/', (req, res) => {

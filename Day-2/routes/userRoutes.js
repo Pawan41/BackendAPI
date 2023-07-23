@@ -3,7 +3,7 @@ const router = express.Router();
 const fs = require('fs');
 const path = require('path');
 
-// middleware
+// Middleware
 router.use(express.json());
 router.use(express.urlencoded());
 
@@ -11,13 +11,13 @@ const userDataFilePath = path.join(__dirname, '../UserDatabase.json');
 
 // Note :: fs modules has both synchronous and asynchronous method for reading and writing things
 
-// 1. Synchronously Read the data from the file
+// 1. Function Synchronously Read the data from the Data File
 function readDataFromFile() {
     const data = fs.readFileSync(userDataFilePath);
     return JSON.parse(data); // If the data is in the string format than json.parse return in json format
 }
 
-// 2. Synchronously Write the data into the file
+// 2. Function Synchronously Write the data into the Data File
 function writeDataToFile(data) {
     fs.writeFileSync(userDataFilePath, JSON.stringify(data, null, 2));
 }
@@ -34,8 +34,10 @@ router.get('/users/:id', (req, res) => {
     // Getting the user ID
     const userId = req.params.id;
 
+    // Comparing the userId with the id that stored into the userDataFilePath
     const user = usersData.find(user => user.id == userId);
 
+    // Find User
     if (user) {
         res.send(user);
     } else {
@@ -84,7 +86,7 @@ router.put('/updateuser/:id', (req, res) => {
         ...usersData[userIndex],
         ...updateUser
     }
-
+    // Save the usersData Data into the dataFile
     writeDataToFile(usersData);
     res.send(usersData[userIndex]);
 })
@@ -102,7 +104,7 @@ router.delete('/deleteuser/:id', (req, res) => {
             error: 'User Not Found!!!!',
         })
     }
-
+    
     usersData.splice(userIndex,1);
     writeDataToFile(usersData);
 
