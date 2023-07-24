@@ -7,7 +7,7 @@ require('dotenv').config();
 const app = express();
 
 // Require our DB
-require('./DataBase_Connection/db');
+require('./Db/conn');
 
 // Import Routes
 const todoRoutes = require('./Routes/ToDoRoutes');
