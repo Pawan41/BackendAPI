@@ -9,15 +9,15 @@ router.use(express.urlencoded());
 
 const userDataFilePath = path.join(__dirname, '../UserDatabase.json');
 
-// Note :: fs modules has both synchronous and asynchronous method for reading and writing things
+// Note :: fs modules has both synchronous and asynchronous Method for Reading and Writing things
 
 // 1. Function Synchronously Read the data from the Data File
 function readDataFromFile() {
     const data = fs.readFileSync(userDataFilePath);
-    return JSON.parse(data); // If the data is in the string format than json.parse return in json format
+    return JSON.parse(data); // If the Data is in the string format than json.parse return in json format
 }
 
-// 2. Function Synchronously Write the data into the Data File
+// 2. Function Synchronously Write the Data into the Data File
 function writeDataToFile(data) {
     fs.writeFileSync(userDataFilePath, JSON.stringify(data, null, 2));
 }
