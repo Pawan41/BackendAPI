@@ -12,9 +12,10 @@ require('./Db/conn');
 // Import Routes
 const todoRoutes = require('./Routes/ToDoRoutes');
 
-// Creating the Port
+// Creating the Port Number
 const port = 8000;
 
+// Middleware
 app.use(bodyParser.json());
 app.use(cors());
 
