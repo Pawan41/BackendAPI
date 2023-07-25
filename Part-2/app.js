@@ -1,6 +1,5 @@
 const express = require('express');
 const cors = require('cors');
-const bodyParser = require('body-parser');
 
 const app = express();
 
@@ -8,11 +7,8 @@ const app = express();
 const port = 8000;
 
 
-// import Routes
+// Import Routes
 const userRouter = require('./routes/userRoutes');
-
-// MIDDLEWARE
-// app.use(bodyParser.json);
 
 /*****   Cors ---> [localhost:3000 localhost:3001] ****/
 
