@@ -5,7 +5,7 @@ const port = 8000;
 const server = http.createServer((req, res) => {
     console.log(req.url);
 
-    //  Creating the API Using the Nodejs Without using the Express.js
+    //  Creating the API Using the Nodejs Without Using the Express.js
     if(req.url == '/'){
         res.statusCode = 200;
         res.setHeader('Content-Type', 'text/html');
@@ -24,7 +24,7 @@ const server = http.createServer((req, res) => {
     }
 });
 
-// Start The Server
+// Start The Server at Port Number 8000
 server.listen(port, () => {
     console.log(`server start at ${port}`)
 })
