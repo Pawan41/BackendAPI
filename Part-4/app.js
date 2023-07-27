@@ -11,7 +11,7 @@ const app = express();
 require('./Db/conn');
 
 // Import Routes
-const userRoutes = require('./Controllers/userRoutes');
+const userRoutes = require('./Routes/userRoutes');
 
 // Creating the Port Number
 const port = 8000;
