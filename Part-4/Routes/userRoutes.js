@@ -22,7 +22,7 @@ function authenticateToken(req, res, next) {
 
     try {
         const decode = jwt.verify(token, process.env.JWT_SECRET_KEY);
-        // If Request Id Exit but Request Id and Decode Id Don't Match
+        // If Request Id Exits but Request Id and Decode Id Don't Match
         if (id && decode.id !== id) {
             return res.status(401).json({ message: "Invalid Token" });
         }
@@ -37,7 +37,7 @@ function authenticateToken(req, res, next) {
 // Create An API For User Registration
 router.post('/adduser', async (req, res, next) => {
     try {
-        const { name, email, password, age, number } = req.body;
+        const { name, email, password, age, number,gender } = req.body;
 
         const checkEmailExit = await User.findOne({ email });
 
@@ -58,13 +58,14 @@ router.post('/adduser', async (req, res, next) => {
             password: hashPassword,
             email,
             age,
-            number
+            number,
+            gender
         })
 
         // Save New User Into the DataBase
         await newUser.save();
         res.status(201).json({
-            message: "New User Addes Succesfully...."
+            message: "New User Added Succesfully...."
         })
     } catch (err) {
         next(err);
